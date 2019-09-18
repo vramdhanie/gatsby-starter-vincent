@@ -1,3 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
+
+:root {
+  --primary: #26717f;
+  --primaryLight: #5aa0ae;
+  --primaryDark: #004553;
+  --secondary: #db840a;
+  --secondaryLight: #ffb446;
+  --secondaryDark: #a45700;
+  --primaryText: #ffffff;
+  --secondaryText: #000000;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 4px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --font: "Roboto", sans-serif;
+  --tablet: 768px;
+  --desktop: 1200px;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -619,4 +639,14 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 2;
 }

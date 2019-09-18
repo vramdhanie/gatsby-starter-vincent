@@ -34,7 +34,10 @@ module.exports = {
     "gatsby-plugin-transition-link",
     {
       resolve: `gatsby-source-filesystem`,
-      options: {},
+      options: {
+        name: `articles`,
+        path: `${__dirname}/src/content/`,
+      },
     },
     {
       resolve: `gatsby-plugin-mdx`,
