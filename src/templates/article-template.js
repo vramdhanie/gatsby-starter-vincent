@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
 import Layout from "../components/layout"
+import Hero from "../components/hero"
+import Banner from "../components/banner"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { FaCircle } from "react-icons/fa"
 
 const ArticleTemplate = ({ data, className }) => {
   const { title, date, author, image } = data.mdx.frontmatter
@@ -13,18 +13,15 @@ const ArticleTemplate = ({ data, className }) => {
 
   return (
     <Layout>
+      <Hero img={img}>
+        <Banner title={title} info={author}>
+          {date}
+        </Banner>
+      </Hero>
       <section className={className}>
         <Link className="link" to="/articles">
           Back to all Articles
         </Link>
-        <div className="info">
-          <h1>{title}</h1>
-          <h4>
-            <span>by {author} </span> <FaCircle className="dot" />{" "}
-            <span>{date}</span>
-          </h4>
-        </div>
-        <Image fluid={img} />
         <div className="content">
           <MDXRenderer>{body}</MDXRenderer>
         </div>
@@ -83,13 +80,15 @@ export default styled(ArticleTemplate)`
     margin-bottom: 0.5rem;
     text-transform: capitalize;
     font-size: 48px;
+    color: var(--primaryDark);
   }
   .info h4 {
     letter-spacing: 5px;
     text-transform: capitalize;
-    font-size: 14px;
+    font-size: 0.7rem;
     text-align: center;
     margin-bottom: 3rem;
+    color: var(--primaryLight);
   }
   .content {
     margin: 2rem 0;
@@ -97,6 +96,7 @@ export default styled(ArticleTemplate)`
   .content h2 {
     text-transform: capitalize;
     margin-bottom: 1rem;
+    color: var(--primaryDark);
   }
   .content p {
     line-height: 1.5;

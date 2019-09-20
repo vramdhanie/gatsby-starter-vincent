@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
 
 :root {
-  --primary: #26717f;
-  --primaryLight: #5aa0ae;
-  --primaryDark: #004553;
-  --secondary: #db840a;
-  --secondaryLight: #ffb446;
-  --secondaryDark: #a45700;
+  --primary: #0277bd;
+  --primaryLight: #58a5f0;
+  --primaryDark: #004c8c;
+  --secondary: #fdd835;
+  --secondaryLight: #ffff6b;
+  --secondaryDark: #c6a700;
   --primaryText: #ffffff;
   --secondaryText: #000000;
   --mainTransition: all 0.3s linear;
@@ -16,6 +16,10 @@
   --font: "Roboto", sans-serif;
   --tablet: 768px;
   --desktop: 1200px;
+  --homeStart: rgba(2, 119, 189, 0.7);
+  --homeEnd: rgba(0, 0, 0, 0.7);
+  --mainBlack: #000000;
+  --mainWhite: #ffffff;
 }
 
 html {
@@ -649,4 +653,30 @@ pre tt:after {
 
 main {
   flex: 2;
+}
+
+.btn-white,
+.btn-primary {
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainWhite);
+  border: 2px solid var(--primaryText);
+  padding: 0.9rem 1.6rem;
+  display: inline-block;
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+.btn-white:hover {
+  background: var(--primaryText);
+  color: var(--primary);
+}
+.btn-primary {
+  background: var(--primary);
+  color: var(--mainWhite);
+  border: 2px solid var(--primary);
+}
+.btn-primary:hover {
+  background: transparent;
+  color: var(--primary);
 }
